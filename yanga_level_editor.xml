@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="yanga_level_editor" default="all">
+  
+  
+  <property file="yanga_level_editor.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*.yarb/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.war"/>
+    <include name="*.swc"/>
+    <include name="*.zip"/>
+    <include name="*.egg"/>
+    <include name="*.ear"/>
+    <include name="*.ane"/>
+    <include name="*.jar"/>
+    <include name="*.klib"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+    <exclude name="**/?*.aj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.1.8" value="${jdk.home.1.8}/bin"/>
+  <path id="jdk.classpath.1.8">
+    <fileset dir="${jdk.home.1.8}">
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/deploy.jar"/>
+      <include name="jre/lib/ext/access-bridge-64.jar"/>
+      <include name="jre/lib/ext/cldrdata.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/jaccess.jar"/>
+      <include name="jre/lib/ext/jfxrt.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/nashorn.jar"/>
+      <include name="jre/lib/ext/sunec.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+      <include name="jre/lib/ext/sunmscapi.jar"/>
+      <include name="jre/lib/ext/sunpkcs11.jar"/>
+      <include name="jre/lib/ext/zipfs.jar"/>
+      <include name="jre/lib/javaws.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jfr.jar"/>
+      <include name="jre/lib/jfxswt.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/management-agent.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/resources.jar"/>
+      <include name="jre/lib/rt.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.1.8}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.8}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.8"/>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.gradle:_com.badlogicgames.gdx:gdx-backend-lwjgl3:1.9.10.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-lwjgl3/1.9.10/e8709a484c2971463c4780476b46d2ef841dbe5e/gdx-backend-lwjgl3-1.9.10.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.badlogicgames.gdx:gdx-freetype-platform:natives-desktop:1.9.10.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-freetype-platform/1.9.10/5c4b67db9c1d62383b718ce040c7cdb555d5b19f/gdx-freetype-platform-1.9.10-natives-desktop.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.badlogicgames.gdx:gdx-freetype:1.9.10.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-freetype/1.9.10/8853e4f08589a9feb4b851187909cfde8810e491/gdx-freetype-1.9.10.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.badlogicgames.gdx:gdx-platform:natives-desktop:1.9.10.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-platform/1.9.10/1907b49f8363dd1ee37d273854a9cc3c741a6e66/gdx-platform-1.9.10-natives-desktop.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.badlogicgames.gdx:gdx:1.9.10.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.10/79d9ad27bd5e3eb18c9ade61d3a27d7237695d53/gdx-1.9.10.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.badlogicgames.jlayer:jlayer:1.0.1-gdx.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/com.badlogicgames.jlayer/jlayer/1.0.1-gdx/7cca83cec5c1b2f011362f4d85aabd71a73b049d/jlayer-1.0.1-gdx.jar"/>
+  </path>
+  
+  <path id="library.gradle:_com.kotcrab.vis:vis-ui:1.4.4.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/com.kotcrab.vis/vis-ui/1.4.4/e13fa82857b40e47ec719a5ab14a9c26e2850946/vis-ui-1.4.4.jar"/>
+  </path>
+  
+  <path id="library.gradle:_de.tomgrill.gdxdialogs:gdx-dialogs-core:1.3.0.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/de.tomgrill.gdxdialogs/gdx-dialogs-core/1.3.0/5c0e38da359c689b47abb43935f0decccf4e06a5/gdx-dialogs-core-1.3.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_de.tomgrill.gdxdialogs:gdx-dialogs-desktop:1.3.0.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/de.tomgrill.gdxdialogs/gdx-dialogs-desktop/1.3.0/20545f4fd1f5fca8689ae82ff153e3b89fbe801b/gdx-dialogs-desktop-1.3.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.jcraft:jorbis:0.0.17.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/org.jcraft/jorbis/0.0.17/8872d22b293e8f5d7d56ff92be966e6dc28ebdc6/jorbis-0.0.17.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.jetbrains.kotlin:kotlin-stdlib-common:1.3.50.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.3.50/3d9cd3e1bc7b92e95f43d45be3bfbcf38e36ab87/kotlin-stdlib-common-1.3.50.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.jetbrains.kotlin:kotlin-stdlib:1.3.50.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.50/b529d1738c7e98bbfa36a4134039528f2ce78ebf/kotlin-stdlib-1.3.50.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.jetbrains.kotlinx:kotlinx-coroutines-core-common:1.1.1.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-common/1.1.1/7ed04382bdf0c89c5d87ac462aa4935ae8e85243/kotlinx-coroutines-core-common-1.1.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core/1.1.1/3d2b7321cdef9ebf9cb7729ea4f75a6f6457df86/kotlinx-coroutines-core-1.1.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.jetbrains:annotations:13.0.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.lwjgl:lwjgl-glfw:3.2.1.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-glfw/3.2.1/27abb7f64894b61cad163791acd8113f0b21296/lwjgl-glfw-3.2.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.lwjgl:lwjgl-glfw:natives-linux:3.2.1.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-glfw/3.2.1/5a2fb27f9e12a34ecabf6f6a7606c61849e347ee/lwjgl-glfw-3.2.1-natives-linux.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.lwjgl:lwjgl-glfw:natives-macos:3.2.1.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-glfw/3.2.1/72fe6dab6110a5a1cd4833f11840eef7b2eadce5/lwjgl-glfw-3.2.1-natives-macos.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.lwjgl:lwjgl-glfw:natives-windows:3.2.1.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-glfw/3.2.1/def7c58ad2e1cb258d6d73be181ffab8ef8bd5/lwjgl-glfw-3.2.1-natives-windows.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.lwjgl:lwjgl-jemalloc:3.2.1.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-jemalloc/3.2.1/7a0c583fcbec32b15784f846df536e1837d83666/lwjgl-jemalloc-3.2.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.lwjgl:lwjgl-jemalloc:natives-linux:3.2.1.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-jemalloc/3.2.1/5536616b558cea2fea6330ca682fd7c733db9c43/lwjgl-jemalloc-3.2.1-natives-linux.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.lwjgl:lwjgl-jemalloc:natives-macos:3.2.1.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-jemalloc/3.2.1/439ab9d0264167a949cc7bcce673704322baaf50/lwjgl-jemalloc-3.2.1-natives-macos.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.lwjgl:lwjgl-jemalloc:natives-windows:3.2.1.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-jemalloc/3.2.1/3c869b3d7638c800b7039cd859d064658643ad6e/lwjgl-jemalloc-3.2.1-natives-windows.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.lwjgl:lwjgl-openal:3.2.1.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-openal/3.2.1/dc7ff2dabb40a141ee9bf2e326d9b1b19f3278fb/lwjgl-openal-3.2.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.lwjgl:lwjgl-openal:natives-linux:3.2.1.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-openal/3.2.1/bcd4be67863dd908f696f628c3ca9f6eb9ae5152/lwjgl-openal-3.2.1-natives-linux.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.lwjgl:lwjgl-openal:natives-macos:3.2.1.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-openal/3.2.1/9357ebfc82a0d6f64e17093dd963219367cd6fa2/lwjgl-openal-3.2.1-natives-macos.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.lwjgl:lwjgl-openal:natives-windows:3.2.1.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-openal/3.2.1/92fb931e65c637cea209ad5c3ffebd1b325ed41d/lwjgl-openal-3.2.1-natives-windows.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.lwjgl:lwjgl-opengl:3.2.1.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-opengl/3.2.1/57008c2374c5bc434b18adfef3f3653ee450ee18/lwjgl-opengl-3.2.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.lwjgl:lwjgl-opengl:natives-linux:3.2.1.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-opengl/3.2.1/c43bb08ed7dcf1a6d344803e464148b3b14dd274/lwjgl-opengl-3.2.1-natives-linux.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.lwjgl:lwjgl-opengl:natives-macos:3.2.1.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-opengl/3.2.1/dca9ad9e59a87172144d531e08ef7f6988073db0/lwjgl-opengl-3.2.1-natives-macos.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.lwjgl:lwjgl-opengl:natives-windows:3.2.1.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl-opengl/3.2.1/80954961b31084d7b4f2f041d6b5a799a774c880/lwjgl-opengl-3.2.1-natives-windows.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.lwjgl:lwjgl:3.2.1.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl/3.2.1/2bb514e444994c6fece99a21f76e0c90438e377f/lwjgl-3.2.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.lwjgl:lwjgl:natives-linux:3.2.1.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl/3.2.1/9bdd47cd63ce102cec837a396c8ded597cb75a66/lwjgl-3.2.1-natives-linux.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.lwjgl:lwjgl:natives-macos:3.2.1.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl/3.2.1/5a4c271d150906858d475603dcb9479453c60555/lwjgl-3.2.1-natives-macos.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.lwjgl:lwjgl:natives-windows:3.2.1.classpath">
+    <pathelement location="${basedir}/../../../../Users/serdjuk/.gradle/caches/modules-2/files-2.1/org.lwjgl/lwjgl/3.2.1/e799d06b8969db0610e68776e0eff4b6191098bd/lwjgl-3.2.1-natives-windows.jar"/>
+  </path>
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <fileset dir="${javac2.home}">
+      <include name="javac2.jar"/>
+      <include name="jdom.jar"/>
+      <include name="asm-all*.jar"/>
+      <include name="forms-*.jar"/>
+    </fileset>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  <import file="${basedir}/.idea/modules/module_yanga_level_editor.xml"/>
+  
+  <import file="${basedir}/.idea/modules/core/module_yanga_level_editor.core.xml"/>
+  
+  <import file="${basedir}/.idea/modules/core/module_yanga_level_editor.core.main.xml"/>
+  
+  <import file="${basedir}/.idea/modules/desktop/module_yanga_level_editor.desktop.xml"/>
+  
+  <import file="${basedir}/.idea/modules/core/module_yanga_level_editor.core.test.xml"/>
+  
+  <import file="${basedir}/.idea/modules/desktop/module_yanga_level_editor.desktop.main.xml"/>
+  
+  <import file="${basedir}/.idea/modules/desktop/module_yanga_level_editor.desktop.test.xml"/>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.yanga_level_editor, clean.module.yanga_level_editor.core, clean.module.yanga_level_editor.core.main, clean.module.yanga_level_editor.desktop, clean.module.yanga_level_editor.core.test, clean.module.yanga_level_editor.desktop.main, clean.module.yanga_level_editor.desktop.test" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.yanga_level_editor, compile.module.yanga_level_editor.core, compile.module.yanga_level_editor.core.main, compile.module.yanga_level_editor.desktop, compile.module.yanga_level_editor.core.test, compile.module.yanga_level_editor.desktop.main, compile.module.yanga_level_editor.desktop.test" description="build all modules"/>
+  
+  <target name="all" depends="build.modules" description="build all"/>
+</project>
